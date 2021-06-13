@@ -1,4 +1,4 @@
 # testing_automation
 
-Apprentissage de diffrent langages (java, javascript), et de différents frameworks d'automatisation de test.
+Apprentissage de differents langages (java, javascript), et de differents frameworks d'automatisation de test.
 
