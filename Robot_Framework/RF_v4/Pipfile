@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 robotframework = "*"
 robotframework-seleniumlibrary = "*"
+robotframework-requests = "*"
+requests = "*"
 
 [dev-packages]
 
