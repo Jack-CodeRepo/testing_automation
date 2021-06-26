@@ -35,7 +35,7 @@ Rennes Open Data
     [Arguments]     ${ligne}
     ${url}=     Set Variable    https://data.rennesmetropole.fr/api/records/1.0/search
     Create Session      ROD    ${url}
-    ${get}=     GET     url=${url}/?dataset=mkt-frequentation-niveau-freq-max-ligne&q=&facet=materiel&facet=jour_semaine&facet=ligne&facet=tranche_horaire&facet=frequentation&facet=niveau_frequentation&refine.ligne=${ligne}           expected_status=${okStatus}
+    ${get}=     GET     url=${url}/?dataset=mkt-frequentation-niveau-freq-max-ligne&q=&facet=jour_semaine&facet=ligne&facet=tranche_horaire&facet=frequentation&facet=niveau_frequentation&refine.ligne=${ligne}           expected_status=${okStatus}
     ${json}=    Set Variable    ${get.json()}
 
     FOR  ${elem}    IN  ${json["records"]}
