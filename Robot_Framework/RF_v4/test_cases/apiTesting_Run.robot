@@ -2,12 +2,17 @@
 
 ***Settings***
 
-Resource            %{ROBOT_PATH}${/}RF_v4${/}resources${/}api_testing.robot
+Resource            %{ROBOT_PATH}${/}RF_v4${/}resources${/}api${/}github.robot
+Resource            %{ROBOT_PATH}${/}RF_v4${/}resources${/}api${/}OpenData_Rennes.robot
 
 
 ***Test Cases***
 
-Test API
-    # api_testing.Connexion Github    Jack-CodeRepo
-    api_testing.Rennes Open Data  53
-    api_testing.Rennes Open Data  76
+Test API GITHUB
+    github.Lister Les Depots Public D Un Utilisateur  Jack-CodeRepo
+    github.Verifier Que Le Nom Utilisateur Soit Dans Son Url  Jack-CodeRepo
+
+
+Test API OpenData_Rennes
+    OpenData_Rennes.Rennes Open Data  53
+    OpenData_Rennes.Rennes Open Data  76
