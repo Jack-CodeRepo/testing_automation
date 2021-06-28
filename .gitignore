@@ -139,6 +139,4 @@ dmypy.json
 .pyre/
 
 # npm folder and files*
-package-lock.json
-package.json
 node_modules
