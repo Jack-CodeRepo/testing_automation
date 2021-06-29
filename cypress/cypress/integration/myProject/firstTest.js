@@ -1,13 +1,22 @@
+/*
+Test sur le framework cypress
+*/
 
+
+// =============================================================================
+// VARIABLES
+// =============================================================================
 var linkCypress = 'a[title=cypress]'
 var stringCypress = 'cypress'
 var visible = 'be.visible'
 
-
 var myUrl='https://github.com/Jack-CodeRepo'
 var myRepo="testing_automation"
 
-// on déclare des fonctions
+
+// =============================================================================
+// FONCTIONS
+// =============================================================================
 function texteDoitEtreVisible(selector, texte){
     cy.get(selector).contains(texte).should(visible)
 }
@@ -17,6 +26,10 @@ function cliquerSurElement(selector, texte){
 }
 
 
+
+// =============================================================================
+// SCRIPT
+// =============================================================================
 describe('gihub test', function(){
 
     it('Visiter Github', function(){
@@ -25,18 +38,16 @@ describe('gihub test', function(){
         cy.url().should('include','Jack-CodeRepo')
     })
 
-    it('Consulter un dépôt', function(){
+    it(`Consulter le dépôt: ${myRepo}`, function(){
         cy.get('a').contains(myRepo);
         cy.get('a').contains(myRepo).click()
 
-
-        // appel des fonctions
-        // et ça marche !
         texteDoitEtreVisible('a',stringCypress)
         cliquerSurElement(linkCypress, stringCypress)
-        cy.url().should('include', stringCypress)
         texteDoitEtreVisible(linkCypress, stringCypress)
         cliquerSurElement(linkCypress, stringCypress)
+        cliquerSurElement(linkCypress, stringCypress)
+
     })
 
 })
