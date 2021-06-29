@@ -1,28 +1,44 @@
 
-describe('Un Titre Qui Claque', function (){
-    it('Ne fait rien du tout', function (){
-        expect(false).not.equal(true)
-    })
-    it('Ne fait vraiment rien du tout', function (){
-        expect(false).to.equal(true)
-    })
-    it('Ne fait-il vraiment rien ?', function (){
-        expect(true).to.equal(true)
-    })
-})
+var linkCypress = 'a[title=cypress]'
+var stringCypress = 'cypress'
+var visible = 'be.visible'
+
+
+var myUrl='https://github.com/Jack-CodeRepo'
+var myRepo="testing_automation"
+
+// on déclare des fonctions
+function texteDoitEtreVisible(selector, texte){
+    cy.get(selector).contains(texte).should(visible)
+}
+
+function cliquerSurElement(selector, texte){
+    cy.get(selector).contains(texte).click()
+}
 
 
 describe('gihub test', function(){
-    var myUrl='https://github.com/Jack-CodeRepo'
-    var myRepo="testing_automation"
+
     it('Visiter Github', function(){
         cy.visit(myUrl)
         cy.contains('Jack')
         cy.url().should('include','Jack-CodeRepo')
-        cy.get('a').contains(myRepo)
-        cy.get('a').contains(myRepo).click()
-        cy.get('[title=cypress]').click()
-        cy.url().should('include',myRepo)
-
     })
+
+    it('Consulter un dépôt', function(){
+        cy.get('a').contains(myRepo);
+        cy.get('a').contains(myRepo).click()
+
+
+        // appel des fonctions
+        // et ça marche !
+        texteDoitEtreVisible('a',stringCypress)
+        cliquerSurElement(linkCypress, stringCypress)
+        cy.url().should('include', stringCypress)
+        texteDoitEtreVisible(linkCypress, stringCypress)
+        cliquerSurElement(linkCypress, stringCypress)
+    })
+
 })
+
+
