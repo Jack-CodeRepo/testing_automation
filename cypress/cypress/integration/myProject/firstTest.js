@@ -3,27 +3,19 @@ Test sur le framework cypress
 */
 
 
+// apprendre les imports
+import { cliquerSurElement } from "/cypress/integration/myFonctions/myFonctions"
+
 // =============================================================================
 // VARIABLES
 // =============================================================================
 var linkCypress = 'a[title=cypress]'
+var linkIntegration = 'a[title=integration]'
 var stringCypress = 'cypress'
-var visible = 'be.visible'
+var stringIntegration = "integration"
 
 var myUrl='https://github.com/Jack-CodeRepo'
 var myRepo="testing_automation"
-
-
-// =============================================================================
-// FONCTIONS
-// =============================================================================
-function texteDoitEtreVisible(selector, texte){
-    cy.get(selector).contains(texte).should(visible)
-}
-
-function cliquerSurElement(selector, texte){
-    cy.get(selector).contains(texte).click()
-}
 
 
 
@@ -39,17 +31,18 @@ describe('gihub test', function(){
     })
 
     it(`Consulter le dépôt: ${myRepo}`, function(){
-        cy.get('a').contains(myRepo);
-        cy.get('a').contains(myRepo).click()
-
-        texteDoitEtreVisible('a',stringCypress)
+        cliquerSurElement('a', myRepo)                              // testing_automation repository
+        cliquerSurElement(linkCypress, stringCypress)               // cypress folder in cypress projectName
+        // pour des raisons obscures, l'url est 
+        //      https://github.com/Jack-CodeRepo/testing_automation 
+        // et non pas
+        //      https://github.com/Jack-CodeRepo/testing_automation/tree/main/cypress 
+        // ajout d'un reload pour cnserver l'url et conserver la rue
+        cy.reload()                                                 
         cliquerSurElement(linkCypress, stringCypress)
-        texteDoitEtreVisible(linkCypress, stringCypress)
-        cliquerSurElement(linkCypress, stringCypress)
-        cliquerSurElement(linkCypress, stringCypress)
+        cliquerSurElement(linkIntegration, stringIntegration)       // integration folder in cypress folder
 
     })
-
 })
 
 
