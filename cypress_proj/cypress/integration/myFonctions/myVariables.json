@@ -1,0 +1,11 @@
+
+{
+    "linkCypressProj" : "a[title=cypress_proj]",
+    "linkCypress" : "a[title=cypress]",
+    "linkIntegration" : "a[title=integration]",
+    "stringCypressProj" : "cypress_proj",
+    "stringCypress" : "cypress",
+    "stringIntegration" : "integration",
+    "myUrl" : "https://github.com/Jack-CodeRepo",
+    "myRepo" : "testing_automation"
+}

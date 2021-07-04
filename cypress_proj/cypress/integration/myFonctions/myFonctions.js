@@ -1,3 +1,4 @@
+
 var visible = 'be.visible'
 
 
@@ -7,4 +8,5 @@ export function texteDoitEtreVisible(selector, texte){
 
 export function cliquerSurElement(selector, texte){
     cy.get(selector, {timeout: 10_000}).contains(texte).should(visible).click()
+    cy.reload()
 }
