@@ -34,11 +34,10 @@ describe('gihub test', function(){
     })
 
     it(`Consulter le dépôt: ${myData['myRepo']}`, function(){
-        cliquerSurElement('a', myData['myRepo'])                              // testing_automation repository
-        cliquerSurElement(myData['linkCypressProj'], myData['stringCypressProj'])               // cypress folder in cypress projectName
+        cliquerSurElement('a', myData['myRepo'])                                        // testing_automation repository
+        cliquerSurElement(myData['linkCypressProj'], myData['stringCypressProj'])       // cypress folder in cypress projectName
         cliquerSurElement(myData['linkCypress'], myData['stringCypress'])
         cliquerSurElement(myData['linkIntegration'], myData['stringIntegration'])       // integration folder in cypress folder
-
     })
 })
 

@@ -12,6 +12,7 @@ def launchBrowser():
     myBrowser = webdriver.Firefox()
     return myBrowser
 
+
 def closeBrowser(myBrowser):
     print(f"Browser closed\n{separator}")
     myBrowser.quit()
@@ -20,6 +21,7 @@ def closeBrowser(myBrowser):
 def goToUrl(url, myBrowser):
     myBrowser.get(url)
     return myBrowser
+
 
 def checkTitle(url, expectedString, myBrowser):
     myBrowser = goToUrl(url, myBrowser)
