@@ -2,7 +2,7 @@
 
 ***Settings***
 
-Resource            %{ROBOT_PATH}${/}RF_v4${/}resources${/}input_test.robot
+Resource            %{ROBOT_PATH}${/}RF_v4${/}resources${/}keywords${/}input_test.robot
 
 
 ***Test Cases***

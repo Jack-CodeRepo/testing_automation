@@ -2,8 +2,8 @@
 
 ***Settings***
 
-Resource            %{ROBOT_PATH}${/}RF_v4${/}resources${/}api${/}github.robot
-Resource            %{ROBOT_PATH}${/}RF_v4${/}resources${/}api${/}OpenData_Rennes.robot
+Resource            %{ROBOT_PATH}${/}RF_v4${/}resources${/}keywords${/}api${/}github.robot
+Resource            %{ROBOT_PATH}${/}RF_v4${/}resources${/}keywords${/}api${/}OpenData_Rennes.robot
 
 
 ***Test Cases***

@@ -1,35 +1,20 @@
+# coding: utf-8
 *** Settings ***
 Library     SeleniumLibrary
 Library     BuiltIn
 
-Resource    my_xpath.robot
+Resource    github_xpath.robot
+
 
 
 *** Keywords ***
-
-Naviguer Vers Un Site Web
-    [Documentation]     Ouvre un navigateur et navigue vers l'url spécifiée
-    ...
-    ...     Arg01:  ${webSite}:     site web ciblé par le test
-    ...     Arg02:  ${browser}:     navigateur utilisé pendant le test
-
-    [Arguments]     ${webSite}  ${browser}
-
-    Open Browser    ${website}  ${browser}
-
-
-
-
 Rechercher Sur GitHub
     [Documentation]
     ...     Rechercher un sujet sur youtube
     ...
     ...     Arg01:  ${sujet}:  sujet recherché
-
     [Arguments]     ${sujet}
-
-    navigation.Recherche Effective Github  ${sujet}
-
+    github.Recherche Effective Github  ${sujet}
 
 
 
@@ -41,10 +26,7 @@ Rechercher ${type} ${string} sur GitHub
     ...     Arg02:  ${string}:  la string d'élément cherché sur github
 
     ${sujet}=     Set Variable    ${type}:${string}
-
-    navigation.Recherche Effective Github  ${sujet}
-
-
+    github.Recherche Effective Github  ${sujet}
 
 
 
@@ -53,7 +35,6 @@ Recherche Effective Github
     ...     Factorisation de la recherche sur Github pour:
     ...         navigation.Rechercher Sur GitHub
     ...         navigation.Rechercher ${type} ${string} sur GitHub
-
     [Arguments]     ${querry}=${None}
 
     # On converti l'argument en booleen
@@ -71,28 +52,13 @@ Recherche Effective Github
     Wait Until Page Contains  view all results  timeout=None  error=None
 
 
-    
 
-
-Revenir A La Page D Acceuil GitHub
+Revenir A La Page D Acceuil Github
     [Documentation]
     ...     Revenir sur la page d'acceuil de Github
 
-    ${locator}=     Set Variable  //*/a[@class="mr-4"]
-
-    Click Element  ${locator}     modifier=False
-
-
-
-
-
-Fermer Le Navigateur
-    [Documentation]
-    ...     Ferme le navigateur utilisé par le test
-
-    Close Browser
-
-
-
-
-
+    [Arguments]     ${connecte}=False 
+    Click Element   ${githubLienPageAcceuil}
+    IF  not ${connecte}
+        Element Should Be Visible  ${githubLienSignIn}  message=None
+    END

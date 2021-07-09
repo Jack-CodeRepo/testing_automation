@@ -6,9 +6,9 @@ Documentation
 ...
 ...     ============================================================
 
-Resource            %{ROBOT_PATH}${/}RF_v4${/}resources${/}navigation.robot
-Library             %{ROBOT_PATH}${/}RF_v4${/}python_kw/myPythonKW.py
-Library             %{ROBOT_PATH}${/}RF_v4${/}python_kw/myPythonKWfunc.py
+Resource            %{ROBOT_PATH}${/}RF_v4${/}resources${/}keywords${/}navigation.robot
+Library             %{ROBOT_PATH}${/}RF_v4${/}resources${/}python_kw${/}myPythonKW.py
+Library             %{ROBOT_PATH}${/}RF_v4${/}resources${/}python_kw${/}myPythonKWfunc.py
 
 Suite Teardown      navigation.Fermer Le Navigateur
 

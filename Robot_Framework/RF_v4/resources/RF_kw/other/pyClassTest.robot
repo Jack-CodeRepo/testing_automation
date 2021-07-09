@@ -6,8 +6,8 @@ Documentation
 ...
 ...     ============================================================
 
-Resource             %{ROBOT_PATH}${/}4${/}resources/input_test.robot
-Library             %{ROBOT_PATH}${/}4${/}python_kw/pyKWClass.py        WITH NAME    PC
+Resource            %{ROBOT_PATH}${/}4${/}resources${/}RF_kw${/}input_test.robot
+Library             %{ROBOT_PATH}${/}4${/}resources${/}python_kw${/}pyKWClass.py        WITH NAME    PC
 
 
 
