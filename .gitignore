@@ -140,3 +140,5 @@ dmypy.json
 
 # npm folder and files*
 node_modules
+cypress_win
+start.bat
