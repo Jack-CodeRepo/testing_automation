@@ -9,15 +9,6 @@ import { cliquerSurElement } from "/cypress/integration/myFonctions/myFonctions"
 // =============================================================================
 // VARIABLES
 // =============================================================================
-// var linkCypressProj = 'a[title=cypress_proj]'
-// var linkCypress = 'a[title=cypress]'
-// var linkIntegration = 'a[title=integration]'
-// var stringCypressProj = 'cypress_proj'
-// var stringCypress = 'cypress'
-// var stringIntegration = "integration"
-
-// var myUrl='https://github.com/Jack-CodeRepo'
-// var myRepo="testing_automation"
 
 const myData = require("/cypress/integration/myFonctions/myVariables")
 
