@@ -23,19 +23,13 @@
 # ROBOT_PATH est une variable d'environnement pointant vers le dépot local Robot_Framework
 
 pathFolder="$ROBOT_PATH/RF_v4/test_cases/"
-testFile01="navTest"
-testFile02="python_kw_test"
+testFile01="test"
 testExtension=".robot"
 test_case01=$pathFolder$testFile01$testExtension
-test_case02=$pathFolder$testFile02$testExtension
 # ================================================================================================
 # VARIABLES ARGUMENT
 # ================================================================================================
 
 echo "Lancement du premier test"
+echo $ROBOT_PATH
 python -m robot $test_case01
-
-# echo ""
-# echo ""
-# echo "Lancement du second test"
-# python -m robot $test_case02
